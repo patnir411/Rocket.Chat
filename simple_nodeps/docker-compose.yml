@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  simplchat:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_TYPE=sqlite
+      - DATABASE_PATH=/data/chat.db
+      - JWT_SECRET=${JWT_SECRET:-change-this-secret-in-production}
+      - ENABLE_REGISTRATION=true
+    volumes:
+      - chat-data:/data
+      - chat-uploads:/app/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  chat-data:
+    driver: local
+  chat-uploads:
+    driver: local

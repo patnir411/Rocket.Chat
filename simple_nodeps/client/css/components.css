@@ -1,0 +1,69 @@
+/* Additional component styles */
+.sidebar-footer {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.room-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--secondary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.room-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.room-name {
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-info { flex: 1; }
+.user-name { font-weight: var(--font-weight-semibold); }
+
+#status-selector {
+  width: 100%;
+  padding: var(--spacing-xs);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.room-topic {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.room-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.typing-indicators {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-dark);
+  border-radius: var(--radius-md);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
