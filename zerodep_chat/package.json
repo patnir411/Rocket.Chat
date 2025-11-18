@@ -1,0 +1,30 @@
+{
+  "name": "zerodep-chat",
+  "version": "1.0.0",
+  "description": "Zero-dependency chat application built using ONLY Node.js core modules",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "keywords": [
+    "chat",
+    "websocket",
+    "zero-dependency",
+    "node.js",
+    "real-time",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/zerodep-chat"
+  }
+}
