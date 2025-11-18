@@ -6,7 +6,11 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "node --watch server/index.js"
+    "dev": "node --watch server/index.js",
+    "test": "node tests/unit/auth.test.js && node tests/unit/database.test.js && node tests/integration/services.test.js && node tests/e2e/user-flow.test.js",
+    "test:unit": "node tests/unit/auth.test.js && node tests/unit/database.test.js",
+    "test:integration": "node tests/integration/services.test.js",
+    "test:e2e": "node tests/e2e/user-flow.test.js"
   },
   "keywords": [
     "chat",

@@ -1,0 +1,42 @@
+[Unit]
+Description=ZeroDep Chat - Zero-dependency chat application
+Documentation=https://github.com/yourusername/zerodep-chat
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/zerodep_chat
+ExecStart=/usr/bin/node server/index.js
+Restart=always
+RestartSec=10
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3000
+# IMPORTANT: Generate with: openssl rand -hex 32
+Environment=JWT_SECRET=CHANGE_THIS_TO_A_RANDOM_SECRET
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/zerodep_chat/data
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictRealtime=true
+RestrictNamespaces=true
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=512
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=zerodep-chat
+
+[Install]
+WantedBy=multi-user.target
